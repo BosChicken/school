@@ -1,0 +1,21 @@
+public class Game {
+    
+    Player p1 = new Player("bob");
+    Player p2 = new Player("bobbi");
+    
+    private boolean winner = false;
+    
+    public Game(){
+        
+    }
+    
+    public void play(){
+        while(!winner){
+            
+            p1.turn();
+          
+            p2.turn();
+            
+        }
+    }
+}
