@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class Player {
+    
+    private PairOfDice dice = new PairOfDice();
+    private Scanner scan = new Scanner(System.in);
+    
+    private int round;
+    private int bank;
+    private boolean play;
+    private String name;
+    
+    public Player(String n){
+        
+        name = n;
+        
+    }
+    
+    public void turn(){
+        play = true;
+        while(play){
+            
+           dice.roll2(); 
+            
+        if( dice.getface() == 2){
+                bank = 0;
+                round = 0;
+                
+            }
+        if(dice.get1face() == 1 || dice.get2face() == 1){
+                round = 0;
+            }
+            
+            round = dice.getface();
+        
+            EndT();
+        
+    }
+                         
+    }
+    
+    public boolean EndT(){
+        System.out.println("do you what to roll agen");
+        play = scan.hasNextBoolean();
+        return play;
+    }
+}
